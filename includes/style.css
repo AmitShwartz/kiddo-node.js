@@ -1,0 +1,39 @@
+header, section, footer {display: block;}
+
+*{
+	margin: 0 auto;
+}
+header{
+	background-color: #1b1e26;
+	height: 76px;
+	text-align: center;	
+}
+
+h1{
+	padding-top: 14px;
+}
+
+#white{
+	color: #ffffff;
+}
+
+#blue{
+	color: #2770e5;
+}
+
+div.conteiner{
+	padding-top: 20px;
+}
+
+footer{
+    height: 60px;
+    margin-top: 15px;
+    border-top: 1px solid black;
+    text-align: center;
+}
+
+footer>p{
+	font-size: 20px;
+	padding-top: 10px;
+}
+

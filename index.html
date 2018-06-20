@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>kiddo API</title>
+		<link rel="stylesheet" href="includes/style.css">
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	</head>
+	<body>
+		<header><h1 id="white">Kiddo API</h1></header>
+		<div class="container">
+			<div class="row mt-3"><h4>This API responses to Kiddo Application</h4></div>
+			<div class="row mt-3">
+				<div class="col-6">
+					<h3 id="blue">new_user[POST]</h3>
+					<p>create new user .</p>
+					<p><b>Variables:</b><br> name,<br>phone,<br>email,<br>department,<br>picture</p>
+						<p><b>Query format:</b><br> https://kiddo2018.herokuapp.com/user/new_user/</p>
+				</div>
+				<div class="col-6">
+					<h3 id="blue">new_task[POST]</h3>
+					<p>Create a new task, for a specific department.
+					<br>Must have a logic date sumbission.</p>
+					<p><b>Variables:</b><br>topic,<br>submission,<br>teacher,<br>content,<br>department</p>
+						<b>Query format:</b><br>
+						https://kiddo2018.herokuapp.com/coordinator/new_task/
+					</p>
+				</div>
+			</div>
+			-------------------------------------------------------------------------------------------------------------------------------------
+			<div class="container">
+				<div class="row mt-3">
+					<div class="col-6">
+						<h3 id="blue">task_complete[POST]</h3>
+							<p>Update the status by Topic in taskList of selected user by email, completed</p>
+							<p><b>Variables:</b><br>t_state_id</p>
+								<b>Query format:</b><br>https://kiddo2018.herokuapp.com/user/task_complete/</p>
+						</div>
+					<div class="col-6">
+						<h3 id="blue">delete_user[DELETE]</h3>
+						<p>Delete User by Email</p>
+						<p><b>Variables:</b><br>email</p>
+							<b>Query format:</b><br>
+							https://kiddo2018.herokuapp.com/user/delete_user/
+						</p>
+					</div>
+				</div>
+			-------------------------------------------------------------------------------------------------------------------------------------
+			<div class="container">
+				<div class="row mt-3">
+					<div class="col-6">
+						<h3 id="blue">get_all_user[GET]</h3>
+							<p>Get all user</p>
+								<b>Query format:</b><br>https://kiddo2018.herokuapp.com/user/get_all_users/</p>
+						</div>
+					<div class="col-6">
+						<h3 id="blue">get_user_by_email[get]</h3>
+						<p>Get user by Email</p>
+						<p><b>Variables:</b><br>email</p>
+							<b>Query format:</b><br>
+							https://kiddo2018.herokuapp.com/user/get_user_by_email/
+						</p>
+					</div>
+				</div>
+			</div>
+			-------------------------------------------------------------------------------------------------------------------------------------
+			<div class="container">
+				<div class="row mt-3">
+					<div class="col-6">
+						<h3 id="blue">update_department[PUT]</h3>
+							<p>Update user with task</p>
+							<p><b>Variables:</b><br>department<br>_id_task</p>
+								<b>Query format:</b><br>https://kiddo2018.herokuapp.com/coordinator/update_department/</p>
+						</div>
+					<div class="col-6">
+						<h3 id="blue">calculate_rank[PUT]</h3>
+						<p>Calculate the grade with date of finish</p>
+						<p><b>Variables:</b><br>email<br>task_id<br>grade</p>
+							<b>Query format:</b><br>
+							https://kiddo2018.herokuapp.com/user/calculate_rank/
+						</p>
+					</div>
+				</div>
+			</div>
+			-------------------------------------------------------------------------------------------------------------------------------------
+			<div class="container">
+				<div class="row mt-3">
+					<div class="col-6">
+						<h3 id="blue">users_complete[GET]</h3>
+							<p>Get all users that completed the task</p>
+							<p><b>Variables:</b><br>_id_task</p>
+								<b>Query format:</b><br>https://kiddo2018.herokuapp.com/user/users_complete/</p>
+						</div>
+					<div class="col-6">
+						<h3 id="blue">users_not_complete[GET]</h3>
+						<p>Get all users that not completed the task</p>
+						<p><b>Variables:</b><br>_id_task</p>
+							<b>Query format:</b><br>
+							https://kiddo2018.herokuapp.com/user/users_not_complete/
+						</p>
+					</div>
+				</div>
+			</div>
+			-------------------------------------------------------------------------------------------------------------------------------------
+			<div class="container">
+				<div class="row mt-3">
+					<div class="col-6">
+						<h3 id="blue">change_submmision[PUT]</h3>
+							<p>change the date submission of task by Topic</p>
+							<p><b>Variables:</b><br>_id<br>submission</p>
+								<b>Query format:</b><br>https://kiddo2018.herokuapp.com/coordinator/change_submmision</p>
+						</div>
+						<div class="col-6">
+							<h3 id="blue">add_helper[PUT}</h3>
+							<p>Get all students that completed the task by Deparment and Topic</p>
+							<p><b>Variables:</b><br>department,<br>topic</p>
+								<b>Query format:</b><br>
+								https://kiddo2018.herokuapp.com/user/add_helper/
+							</p>
+						</div>
+				</div>
+			</div>
+			-------------------------------------------------------------------------------------------------------------------------------------
+			<div class="container">
+				<div class="row mt-3">
+							<div class="col-6">
+									<h3 id="blue">students.json format</h3>
+									<p>{<br>
+										&emsp;"students": [<br>
+										&emsp;&emsp;{<br>
+											&emsp;&emsp;&emsp;"_id":1,<br>
+											&emsp;&emsp;&emsp;"picture":"img.png",<br>
+											&emsp;&emsp;&emsp;"rank":"0",<br>
+											&emsp;&emsp;&emsp;"name":"Amit Shwartz",<br>
+											&emsp;&emsp;&emsp;"phone":"05012345678",<br>
+											&emsp;&emsp;&emsp;"email":"amit@gmail.com",<br>
+											&emsp;&emsp;&emsp;"department":"web",<br>
+											&emsp;&emsp;&emsp;"taskList": [<br>
+											&emsp;&emsp;&emsp;&emsp;{<br>
+												&emsp;&emsp;&emsp;&emsp;&emsp;"status":"Completed",<br>
+												&emsp;&emsp;&emsp;&emsp;&emsp;"topic":"SDD for service",<br>
+												&emsp;&emsp;&emsp;&emsp;&emsp;"submission":"2018-06-10",<br>
+												&emsp;&emsp;&emsp;&emsp;&emsp;"teacher":"yonit"<br>
+												&emsp;&emsp;&emsp;&emsp;&emsp;"content":"Lorem Ipsum..."<br>
+												&emsp;&emsp;&emsp;&emsp;	}<br>
+													&emsp;&emsp;&emsp;]<br>
+													&emsp;&emsp;}<br>
+													&emsp;]<br>
+													}</p>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		<footer><p>&copy Amit Shwartz & Fabian Roitman</p></footer>
+	</body>
+</html>
