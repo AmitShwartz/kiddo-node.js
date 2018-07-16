@@ -136,15 +136,25 @@ router.get('/get_user_by_email/:email', (req, res) => {
         });
 });
 
+///////// get task by id \\\\\\\\\\\\ 
+router.get('/task_content/:task_id', (req, res) => {
+    Task.findOne({_id: req.params.task_id}, (err, task) => {
+        if(err)
+            res.status(500).send({ "Message": `query error: ${err}`});
+
+        res.status(200).json(task);
+    });
+});
+
 ///////// get all users that completed the task \\\\\\\\\\\\ 
-router.get('/users_complete/:_id_task',(req, res) =>{
+router.get('/user_task_complete/:_id_task',(req, res) =>{
     User.find({taskList: {'$elemMatch' : {
-	        	                '_id_task' : req.params._id_task,
-	        	                'status': "Completed"
-	        	                }
-	        	            }
-	        	        }
-           		, (err, users) => {
+                            '_id_task' : req.params._id_task,
+                            'status': "Complete"
+                            }
+                        }
+                    }
+              , (err, users) => {
                         if(err)
                           res.status(500).send({ "Message": `query error: ${err}`});
 
